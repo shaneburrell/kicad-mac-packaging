@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUM_OF_CORES=7
+NUM_OF_CORES=1
 
 WX_SRC_URL="http://downloads.sourceforge.net/project/wxpython/wxPython/3.0.2.0/wxPython-src-3.0.2.0.tar.bz2?r=http%3A%2F%2Fwww.wxpython.org%2Fdownload.php&ts=1425049283&use_mirror=iweb"
 WX_SRC_NAME=wxPython-src-3.0.2.0.tar.bz2
@@ -45,6 +45,7 @@ check_wx_patched() {
 		patch -p0 < ../../wx_patches/wxwidgets-3.0.0_macosx_scrolledwindow.patch || exit 1
 		patch -p0 < ../../wx_patches/wxwidgets-3.0.2_macosx_retina_opengl.patch || exit 1
 		patch -p0 < ../../wx_patches/wxwidgets-3.0.2_macosx_magnify_event.patch || exit 1
+		patch -p0 < ../../wx_patches/wxwidgets-3.0.2_macosx_sierra.patch || exit 1
 		cd -
 	fi	
 }
@@ -66,6 +67,7 @@ check_wx_build() {
 		      --prefix=`pwd`/../wx-bin \
 		      --with-opengl \
 		      --enable-aui \
+		      --disable-mediactrl \
 		      --enable-utf8 \
 		      --enable-html \
 		      --enable-stl \
