@@ -7,7 +7,7 @@ BASE=`pwd`
 SRC=kicad
 
 if [ ! -d $SRC ]; then
-    git clone https://git.launchpad.net/kicad 
+    git clone --depth=1 https://git.launchpad.net/kicad 
 fi
 
 cd kicad

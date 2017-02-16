@@ -3,7 +3,7 @@ import os
 import subprocess
 import shutil
 
-NUM_OF_CORES = 8
+NUM_OF_CORES = 4
 
 
 def get_git_shortsha():
